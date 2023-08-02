@@ -23,17 +23,8 @@ class BaseViewController: UIViewController {
     private(set) var didSetupConstraints = false
     
     override func viewDidLoad() {
-        self.view.setNeedsUpdateConstraints()
+
     }
     
-    override func updateViewConstraints() {
-        if !self.didSetupConstraints {
-            self.setupConstraints()
-            self.didSetupConstraints = true
-        }
-    }
-    
-    func setupConstraints() {
-        //override point
-    }
+ 
 }
