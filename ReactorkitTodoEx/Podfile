@@ -1,0 +1,25 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ReactorkitTodoEx' do
+  use_frameworks!
+  # Architecture
+  pod 'ReactorKit'
+
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'RxOptional'
+  pod 'RxViewController'
+
+  # UI
+  pod 'SnapKit'
+  pod 'ManualLayout'
+
+  # ETC
+  pod 'URLNavigator'
+  pod 'Then'
+  pod 'ReusableKit'
+  pod 'CGFloatLiteral'
+end
