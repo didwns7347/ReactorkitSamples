@@ -20,11 +20,18 @@ class GitHubAPIService : BaseService, GitHubAPIServiceType {
         }
         let request = URLRequest(url: reqeustURL, timeoutInterval: 10)
         
-        let tmp =  URLSession.shared.rx.data(request: request)
-        //            .map { data in
-        //
-        //            }
-        return .just([])
+        return URLSession.shared.rx.data(request: request)
+            .map{ data in
+                do {
+                    let decodedData = try JSONDecoder().decode(RepositoryList.self, from: data)
+                    return decodedData.items
+                } catch {
+                    print(error.localizedDescription)
+                    print(error)
+                    return [Repository]()
+                }
+            }
+        
         
     }
     

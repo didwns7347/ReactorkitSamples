@@ -9,7 +9,7 @@
 import Foundation
 
 struct RepositoryList: Decodable{
-    let list : [Repository]
+    let items : [Repository]
     
     static func parse(data: Data)-> [Repository]{
         var list = [Repository]()
