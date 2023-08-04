@@ -104,7 +104,12 @@ final class TaskEditViewReactor: Reactor {
             }
             let alertActions: [TaskEditViewCancelAlertAction] = [.leave, .stay]
             return self.provider.alertService
-                .show(title: "Really?", message: "All Changes will be laost", preferredStyle: .alert, actions: alertActions)
+                .show(
+                    title: "Really?",
+                    message: "All Changes will be laost",
+                    preferredStyle: .alert,
+                    actions: alertActions
+                )
                 .flatMap{ alertAction -> Observable<Mutation>  in
                     switch alertAction {
                     case .leave:
