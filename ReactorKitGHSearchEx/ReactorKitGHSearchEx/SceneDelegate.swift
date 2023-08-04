@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.backgroundColor = .white
         let serviceProvider = ServiceProvider()
-        let reactor = SearchViewReactor(provicer: <#T##ServiceProviderType#>, initialState: <#T##SearchViewReactor.State#>)
+        let reactor = SearchViewReactor(provicer: serviceProvider)
         window?.rootViewController = UINavigationController(rootViewController: SearchViewController(reactor: reactor))
         window?.makeKeyAndVisible()
     }
