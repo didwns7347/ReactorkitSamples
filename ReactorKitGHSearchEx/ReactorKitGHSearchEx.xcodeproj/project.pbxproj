@@ -22,6 +22,8 @@
 		9B8B701A2A7CC27200C08605 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B70192A7CC27200C08605 /* RepositoryModel.swift */; };
 		9B8B701C2A7CC39D00C08605 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B701B2A7CC39D00C08605 /* BaseService.swift */; };
 		9B8B701E2A7CC58B00C08605 /* SearchViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B701D2A7CC58B00C08605 /* SearchViewReactor.swift */; };
+		9B8B70222A7CD1EF00C08605 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B70212A7CD1EF00C08605 /* Differentiator */; };
+		9B8B70242A7CD1EF00C08605 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B70232A7CD1EF00C08605 /* RxDataSources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +48,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B8B70102A7CBE7B00C08605 /* RxSwift in Frameworks */,
+				9B8B70222A7CD1EF00C08605 /* Differentiator in Frameworks */,
 				9B8B700E2A7CBE7B00C08605 /* RxRelay in Frameworks */,
+				9B8B70242A7CD1EF00C08605 /* RxDataSources in Frameworks */,
 				9B8B70132A7CBE8D00C08605 /* ReactorKit in Frameworks */,
 				9B8B700C2A7CBE7B00C08605 /* RxCocoa in Frameworks */,
 			);
@@ -74,15 +78,14 @@
 		9B8B6FF22A7CBD6800C08605 /* ReactorKitGHSearchEx */ = {
 			isa = PBXGroup;
 			children = (
-				9B8B70182A7CC25C00C08605 /* Models */,
-				9B8B70072A7CBE2500C08605 /* Services */,
+				9B8B70252A7CDE1100C08605 /* ViewModules */,
 				9B8B6FF32A7CBD6800C08605 /* AppDelegate.swift */,
 				9B8B6FF52A7CBD6800C08605 /* SceneDelegate.swift */,
-				9B8B701F2A7CC58F00C08605 /* SearchViews */,
+				9B8B70182A7CC25C00C08605 /* Models */,
+				9B8B70072A7CBE2500C08605 /* Services */,
 				9B8B6FFC2A7CBD6900C08605 /* Assets.xcassets */,
 				9B8B6FFE2A7CBD6900C08605 /* LaunchScreen.storyboard */,
 				9B8B70012A7CBD6900C08605 /* Info.plist */,
-				9B8B70142A7CBEB900C08605 /* BaseViewController.swift */,
 			);
 			path = ReactorKitGHSearchEx;
 			sourceTree = "<group>";
@@ -114,6 +117,15 @@
 			path = SearchViews;
 			sourceTree = "<group>";
 		};
+		9B8B70252A7CDE1100C08605 /* ViewModules */ = {
+			isa = PBXGroup;
+			children = (
+				9B8B70142A7CBEB900C08605 /* BaseViewController.swift */,
+				9B8B701F2A7CC58F00C08605 /* SearchViews */,
+			);
+			path = ViewModules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +147,8 @@
 				9B8B700D2A7CBE7B00C08605 /* RxRelay */,
 				9B8B700F2A7CBE7B00C08605 /* RxSwift */,
 				9B8B70122A7CBE8D00C08605 /* ReactorKit */,
+				9B8B70212A7CD1EF00C08605 /* Differentiator */,
+				9B8B70232A7CD1EF00C08605 /* RxDataSources */,
 			);
 			productName = ReactorKitGHSearchEx;
 			productReference = 9B8B6FF02A7CBD6800C08605 /* ReactorKitGHSearchEx.app */;
@@ -167,6 +181,7 @@
 			packageReferences = (
 				9B8B700A2A7CBE7B00C08605 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				9B8B70112A7CBE8D00C08605 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				9B8B70202A7CD1EF00C08605 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 9B8B6FF12A7CBD6800C08605 /* Products */;
 			projectDirPath = "";
@@ -430,6 +445,14 @@
 				kind = branch;
 			};
 		};
+		9B8B70202A7CD1EF00C08605 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -452,6 +475,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B8B70112A7CBE8D00C08605 /* XCRemoteSwiftPackageReference "ReactorKit" */;
 			productName = ReactorKit;
+		};
+		9B8B70212A7CD1EF00C08605 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B8B70202A7CD1EF00C08605 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		9B8B70232A7CD1EF00C08605 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B8B70202A7CD1EF00C08605 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
