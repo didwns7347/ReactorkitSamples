@@ -49,7 +49,8 @@ private extension RepositoryCell {
     func layout() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 30)
         ])
     }
     
