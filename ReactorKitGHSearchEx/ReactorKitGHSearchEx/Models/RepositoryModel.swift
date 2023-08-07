@@ -25,20 +25,26 @@ struct RepositoryList: Decodable {
     }
 }
 
-struct Repository : Decodable, Equatable {
+struct Repository: Decodable, Equatable {
     
     let id : Int
     let name : String
     let description : String?
     let stargazersCount : Int
     let language : String?
+    let url: String
+    let owner: Owner
     
     enum CodingKeys: String , CodingKey{
-        case id,name,description,language
+        case id, name, description, language, owner, url
         case stargazersCount = "stargazers_count"
     }
     
 }
 
+struct Owner: Decodable, Equatable {
+    let id: Int
+    let avatar_url: String
+}
 
 

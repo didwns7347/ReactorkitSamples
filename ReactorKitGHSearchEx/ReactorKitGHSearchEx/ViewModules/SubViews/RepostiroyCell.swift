@@ -8,6 +8,7 @@
 import UIKit
 import ReactorKit
 import RxCocoa
+import Kingfisher
 
 class RepositoryCell : UITableViewCell {
     static let identifier = "RepositoryCellID"
@@ -16,6 +17,13 @@ class RepositoryCell : UITableViewCell {
         let v = UILabel()
         v.font = .systemFont(ofSize: 20, weight: .bold)
         v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
+    lazy var ownerIcon : UIImageView = {
+        let v = UIImageView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.contentMode = .scaleAspectFit
         return v
     }()
     
@@ -30,12 +38,14 @@ class RepositoryCell : UITableViewCell {
     
     func config(model:Repository) {
         self.titleLabel.text = model.name
+        self.ownerIcon.kf.setImage(
+            with: URL(string: model.owner.avatar_url),
+            placeholder: UIImage(systemName: "person.circle.fill")
+        )
     }
-    
-
-    
-    
 }
+
+
 private extension RepositoryCell {
     func initCell() {
         attribute()
@@ -43,13 +53,22 @@ private extension RepositoryCell {
     
     func attribute() {
         self.addSubview(titleLabel)
+        self.addSubview(ownerIcon)
         layout()
     }
     
     func layout() {
         NSLayoutConstraint.activate([
+            ownerIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
+            ownerIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            ownerIcon.widthAnchor.constraint(equalToConstant: 40),
+            ownerIcon.heightAnchor.constraint(equalToConstant: 40),
+            ownerIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            titleLabel.leadingAnchor.constraint(equalTo: self.ownerIcon.trailingAnchor, constant: 5),
             titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 30)
         ])
     }

@@ -26,6 +26,7 @@ class SearchViewController: BaseViewController ,View {
         return tv
     }()
     
+    
     init(reactor: SearchViewReactor) {
         super.init()
         self.reactor = reactor
@@ -67,6 +68,7 @@ private extension SearchViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "검색"
         self.view.addSubview(tableView)
+        
         layout()
     }
     
