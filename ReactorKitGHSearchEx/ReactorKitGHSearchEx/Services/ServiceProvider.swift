@@ -7,8 +7,8 @@
 
 import Foundation
 protocol ServiceProviderType : AnyObject{
-    var gitHubAPIServiceType: GitHubAPIServiceType { get  }
+    var gitHubAPIService: GitHubAPIServiceType { get  }
 }
 class ServiceProvider : ServiceProviderType {
-    lazy var gitHubAPIServiceType: GitHubAPIServiceType = GitHubAPIService(provider: self)
+    lazy var gitHubAPIService: GitHubAPIServiceType = GitHubAPIService(provider: self)
 }

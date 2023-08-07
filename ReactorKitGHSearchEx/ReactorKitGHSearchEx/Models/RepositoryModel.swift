@@ -7,9 +7,9 @@
 
 
 import Foundation
-
-struct RepositoryList: Decodable{
-    let list : [Repository]
+import RxDataSources
+struct RepositoryList: Decodable {
+    let items : [Repository]
     
     static func parse(data: Data)-> [Repository]{
         var list = [Repository]()
@@ -25,16 +25,28 @@ struct RepositoryList: Decodable{
     }
 }
 
-struct Repository : Decodable{
+struct Repository: Decodable, Equatable {
+    
     let id : Int
     let name : String
     let description : String?
     let stargazersCount : Int
     let language : String?
-    
+    let url: String
+    let owner: Owner
+    let topics: [String]
+    let htmlUrl : String
     enum CodingKeys: String , CodingKey{
-        case id,name,description,language
+        case id, name, description, language, owner, url, topics
         case stargazersCount = "stargazers_count"
+        case htmlUrl = "html_url"
     }
     
 }
+
+struct Owner: Decodable, Equatable {
+    let id: Int
+    let avatar_url: String
+}
+
+
