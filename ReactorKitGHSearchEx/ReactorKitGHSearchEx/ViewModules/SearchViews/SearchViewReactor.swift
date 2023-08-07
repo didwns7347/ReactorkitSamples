@@ -9,9 +9,9 @@ import Foundation
 import ReactorKit
 import RxSwift
 
+
 class SearchViewReactor : Reactor {
-   
-    
+
     enum Action {
         case keywordInput(String)
     }
@@ -47,6 +47,9 @@ class SearchViewReactor : Reactor {
         case .searchResult(let newRepositories):
             newState.currentPage = 1
             newState.repositoryResult = newRepositories
+            for repo in newRepositories {
+                print(repo.name)
+            }
             return newState
         }
     }

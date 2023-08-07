@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B24D55B2A80820C008110D6 /* RepostiroyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24D55A2A80820C008110D6 /* RepostiroyCell.swift */; };
 		9B8B6FF42A7CBD6800C08605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B6FF32A7CBD6800C08605 /* AppDelegate.swift */; };
 		9B8B6FF62A7CBD6800C08605 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B6FF52A7CBD6800C08605 /* SceneDelegate.swift */; };
 		9B8B6FF82A7CBD6800C08605 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B6FF72A7CBD6800C08605 /* SearchViewController.swift */; };
@@ -24,9 +25,11 @@
 		9B8B701E2A7CC58B00C08605 /* SearchViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B701D2A7CC58B00C08605 /* SearchViewReactor.swift */; };
 		9B8B70222A7CD1EF00C08605 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B70212A7CD1EF00C08605 /* Differentiator */; };
 		9B8B70242A7CD1EF00C08605 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 9B8B70232A7CD1EF00C08605 /* RxDataSources */; };
+		9B8B70272A7CF41100C08605 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B70262A7CF41100C08605 /* SectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B24D55A2A80820C008110D6 /* RepostiroyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostiroyCell.swift; sourceTree = "<group>"; };
 		9B8B6FF02A7CBD6800C08605 /* ReactorKitGHSearchEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKitGHSearchEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B6FF32A7CBD6800C08605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8B6FF52A7CBD6800C08605 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		9B8B70192A7CC27200C08605 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		9B8B701B2A7CC39D00C08605 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		9B8B701D2A7CC58B00C08605 /* SearchViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewReactor.swift; sourceTree = "<group>"; };
+		9B8B70262A7CF41100C08605 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B24D5592A808200008110D6 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				9B24D55A2A80820C008110D6 /* RepostiroyCell.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		9B8B6FE72A7CBD6800C08605 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8B70192A7CC27200C08605 /* RepositoryModel.swift */,
+				9B8B70262A7CF41100C08605 /* SectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +133,7 @@
 		9B8B70252A7CDE1100C08605 /* ViewModules */ = {
 			isa = PBXGroup;
 			children = (
+				9B24D5592A808200008110D6 /* SubViews */,
 				9B8B70142A7CBEB900C08605 /* BaseViewController.swift */,
 				9B8B701F2A7CC58F00C08605 /* SearchViews */,
 			);
@@ -209,9 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B24D55B2A80820C008110D6 /* RepostiroyCell.swift in Sources */,
 				9B8B701C2A7CC39D00C08605 /* BaseService.swift in Sources */,
 				9B8B70152A7CBEB900C08605 /* BaseViewController.swift in Sources */,
 				9B8B70092A7CBE3200C08605 /* ServiceProvider.swift in Sources */,
+				9B8B70272A7CF41100C08605 /* SectionModel.swift in Sources */,
 				9B8B6FF82A7CBD6800C08605 /* SearchViewController.swift in Sources */,
 				9B8B6FF42A7CBD6800C08605 /* AppDelegate.swift in Sources */,
 				9B8B6FF62A7CBD6800C08605 /* SceneDelegate.swift in Sources */,

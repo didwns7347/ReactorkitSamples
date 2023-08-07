@@ -7,8 +7,8 @@
 
 
 import Foundation
-
-struct RepositoryList: Decodable{
+import RxDataSources
+struct RepositoryList: Decodable {
     let items : [Repository]
     
     static func parse(data: Data)-> [Repository]{
@@ -25,7 +25,8 @@ struct RepositoryList: Decodable{
     }
 }
 
-struct Repository : Decodable{
+struct Repository : Decodable, Equatable {
+    
     let id : Int
     let name : String
     let description : String?
@@ -38,3 +39,6 @@ struct Repository : Decodable{
     }
     
 }
+
+
+
