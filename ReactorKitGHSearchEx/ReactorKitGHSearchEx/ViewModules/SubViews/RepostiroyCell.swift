@@ -9,6 +9,7 @@ import UIKit
 import ReactorKit
 import RxCocoa
 import Kingfisher
+import SnapKit
 
 class RepositoryCell : UITableViewCell {
     static let identifier = "RepositoryCellID"
@@ -16,14 +17,18 @@ class RepositoryCell : UITableViewCell {
     lazy var titleLabel : UILabel = {
         let v = UILabel()
         v.font = .systemFont(ofSize: 20, weight: .bold)
-        v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
     lazy var ownerIcon : UIImageView = {
         let v = UIImageView()
-        v.translatesAutoresizingMaskIntoConstraints = false
         v.contentMode = .scaleAspectFit
+        return v
+    }()
+    
+    lazy var repoDescription: UILabel = {
+        let v = UILabel()
+        v.font = .systemFont(ofSize: 15)
         return v
     }()
     
@@ -42,6 +47,7 @@ class RepositoryCell : UITableViewCell {
             with: URL(string: model.owner.avatar_url),
             placeholder: UIImage(systemName: "person.circle.fill")
         )
+        self.repoDescription.text = model.description ?? ""
     }
 }
 
@@ -54,23 +60,25 @@ private extension RepositoryCell {
     func attribute() {
         self.addSubview(titleLabel)
         self.addSubview(ownerIcon)
+        self.addSubview(repoDescription)
         layout()
     }
     
     func layout() {
-        NSLayoutConstraint.activate([
-            ownerIcon.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
-            ownerIcon.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            ownerIcon.widthAnchor.constraint(equalToConstant: 40),
-            ownerIcon.heightAnchor.constraint(equalToConstant: 40),
-            ownerIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 30)
-        ])
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -30),
-            titleLabel.leadingAnchor.constraint(equalTo: self.ownerIcon.trailingAnchor, constant: 5),
-            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 30)
-        ])
+        ownerIcon.snp.makeConstraints{
+            $0.top.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(30)
+            $0.width.height.equalTo(30)
+        }
+        titleLabel.snp.makeConstraints{
+            $0.leading.equalTo(ownerIcon.snp.trailing).offset(10)
+            $0.centerY.equalTo(ownerIcon.snp.centerY)
+        }
+        repoDescription.snp.makeConstraints{
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.bottom.equalToSuperview().offset(-5)
+        }
     }
     
 }

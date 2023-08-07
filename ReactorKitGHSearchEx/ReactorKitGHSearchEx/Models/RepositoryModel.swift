@@ -34,10 +34,12 @@ struct Repository: Decodable, Equatable {
     let language : String?
     let url: String
     let owner: Owner
-    
+    let topics: [String]
+    let htmlUrl : String
     enum CodingKeys: String , CodingKey{
-        case id, name, description, language, owner, url
+        case id, name, description, language, owner, url, topics
         case stargazersCount = "stargazers_count"
+        case htmlUrl = "html_url"
     }
     
 }
