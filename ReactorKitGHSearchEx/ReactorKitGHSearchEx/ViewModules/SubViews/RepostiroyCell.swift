@@ -13,7 +13,7 @@ import SnapKit
 
 class RepositoryCell : UITableViewCell {
     static let identifier = "RepositoryCellID"
-    
+    var buttonAction : (() -> ())? = nil
     lazy var titleLabel : UILabel = {
         let v = UILabel()
         v.font = .systemFont(ofSize: 20, weight: .bold)
@@ -32,6 +32,23 @@ class RepositoryCell : UITableViewCell {
         return v
     }()
     
+
+    lazy var movePageBtn : UIButton = {
+        let v = UIButton()
+        v.setImage(UIImage(systemName: "text.magnifyingglass"), for: .normal)
+        v.setTitleColor(.blue, for: .normal)
+        
+        v.layer.borderWidth = 1.0
+        v.layer.borderColor = UIColor.gray.cgColor
+        v.addTarget(self, action: #selector(moveAction), for: .touchUpInside)
+        return v
+    }()
+    
+    @objc func moveAction() {
+        guard let buttonAction = buttonAction else { return }
+        buttonAction()
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         initCell()
@@ -49,6 +66,8 @@ class RepositoryCell : UITableViewCell {
         )
         self.repoDescription.text = model.description ?? ""
     }
+    
+ 
 }
 
 
@@ -58,9 +77,10 @@ private extension RepositoryCell {
     }
     
     func attribute() {
-        self.addSubview(titleLabel)
-        self.addSubview(ownerIcon)
-        self.addSubview(repoDescription)
+        self.contentView.addSubview(titleLabel)
+        self.contentView.addSubview(ownerIcon)
+        self.contentView.addSubview(repoDescription)
+        self.contentView.addSubview(movePageBtn)
         layout()
     }
     
@@ -70,10 +90,20 @@ private extension RepositoryCell {
             $0.leading.equalToSuperview().inset(30)
             $0.width.height.equalTo(30)
         }
+        
         titleLabel.snp.makeConstraints{
             $0.leading.equalTo(ownerIcon.snp.trailing).offset(10)
             $0.centerY.equalTo(ownerIcon.snp.centerY)
+            $0.trailing.equalToSuperview().inset(50)
         }
+        
+        movePageBtn.snp.makeConstraints {
+            $0.centerY.equalTo(ownerIcon.snp.centerY)
+            $0.leading.equalTo(titleLabel.snp.trailing).offset(5)
+            $0.height.width.equalTo(30)
+        }
+        
+       
         repoDescription.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview().inset(30)
