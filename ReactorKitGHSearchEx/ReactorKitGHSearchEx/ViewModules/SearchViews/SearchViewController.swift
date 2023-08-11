@@ -24,7 +24,7 @@ class SearchViewController: BaseViewController ,View {
         let tv = UITableView()
         tv.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.identifier)
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.rowHeight = 100
+        tv.rowHeight = 200
         return tv
     }()
     
@@ -57,12 +57,9 @@ class SearchViewController: BaseViewController ,View {
         reactor.state.map{ $0.repositoryResult }
             .bind(to: tableView.rx.items(cellIdentifier: RepositoryCell.identifier, cellType: RepositoryCell.self)){
                 indexPath, repo, cell in
+                cell.controller = self.searchController
+                cell.tagList = repo.topics
                 cell.config(model: repo)
-                cell.buttonAction = {[weak self] in
-                    let index = indexPath
-                    print("\(index)")
-                }
-                
             }
             .disposed(by: disposeBag)
         
@@ -76,17 +73,20 @@ class SearchViewController: BaseViewController ,View {
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         
-//        tableView.rx.itemSelected
-//            .subscribe(onNext:{[weak self, weak reactor] indexPath in
-//                guard let `self` = self else { return }
-//                self.view.endEditing(true)
-//                self.tableView.deselectRow(at: indexPath, animated: true)
-//                guard let repo = reactor?.currentState.repositoryResult[indexPath.row] else { return }
-//                guard let url = URL(string: repo.htmlUrl) else { return }
-//                let vc = SFSafariViewController(url: url)
-//                self.searchController.present(vc, animated: true)
-//            })
-//            .disposed(by: disposeBag)
+        tableView.rx.itemSelected
+            .subscribe(onNext:{[weak self, weak reactor] indexPath in
+                guard let `self` = self else { return }
+                self.view.endEditing(true)
+                self.tableView.deselectRow(at: indexPath, animated: true)
+                guard let repo = reactor?.currentState.repositoryResult[indexPath.row] else { return }
+                guard let url = URL(string: repo.htmlUrl) else { return }
+                let vc = SFSafariViewController(url: url)
+                self.searchController.present(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
+
+        
+  
     }
 }
 

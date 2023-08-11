@@ -10,6 +10,8 @@
 		9B24D55B2A80820C008110D6 /* RepostiroyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B24D55A2A80820C008110D6 /* RepostiroyCell.swift */; };
 		9B24D5602A80A738008110D6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24D55F2A80A738008110D6 /* Kingfisher */; };
 		9B24D5632A80B2E3008110D6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24D5622A80B2E3008110D6 /* SnapKit */; };
+		9B276FAA2A84C36E0061BB55 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B276FA92A84C36E0061BB55 /* TagCell.swift */; };
+		9B276FAC2A84CCA60061BB55 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B276FAB2A84CCA60061BB55 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		9B8B6FF42A7CBD6800C08605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B6FF32A7CBD6800C08605 /* AppDelegate.swift */; };
 		9B8B6FF62A7CBD6800C08605 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B6FF52A7CBD6800C08605 /* SceneDelegate.swift */; };
 		9B8B6FF82A7CBD6800C08605 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8B6FF72A7CBD6800C08605 /* SearchViewController.swift */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		9B24D55A2A80820C008110D6 /* RepostiroyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostiroyCell.swift; sourceTree = "<group>"; };
+		9B276FA92A84C36E0061BB55 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		9B276FAB2A84CCA60061BB55 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		9B8B6FF02A7CBD6800C08605 /* ReactorKitGHSearchEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKitGHSearchEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B8B6FF32A7CBD6800C08605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B8B6FF52A7CBD6800C08605 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 		9B24D5592A808200008110D6 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				9B276FA92A84C36E0061BB55 /* TagCell.swift */,
 				9B24D55A2A80820C008110D6 /* RepostiroyCell.swift */,
 			);
 			path = SubViews;
@@ -137,6 +142,7 @@
 				9B24D5592A808200008110D6 /* SubViews */,
 				9B8B70142A7CBEB900C08605 /* BaseViewController.swift */,
 				9B8B701F2A7CC58F00C08605 /* SearchViews */,
+				9B276FAB2A84CCA60061BB55 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = ViewModules;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B276FAA2A84C36E0061BB55 /* TagCell.swift in Sources */,
 				9B24D55B2A80820C008110D6 /* RepostiroyCell.swift in Sources */,
 				9B8B701C2A7CC39D00C08605 /* BaseService.swift in Sources */,
 				9B8B70152A7CBEB900C08605 /* BaseViewController.swift in Sources */,
@@ -235,6 +242,7 @@
 				9B8B6FF82A7CBD6800C08605 /* SearchViewController.swift in Sources */,
 				9B8B6FF42A7CBD6800C08605 /* AppDelegate.swift in Sources */,
 				9B8B6FF62A7CBD6800C08605 /* SceneDelegate.swift in Sources */,
+				9B276FAC2A84CCA60061BB55 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				9B8B701A2A7CC27200C08605 /* RepositoryModel.swift in Sources */,
 				9B8B70172A7CC00B00C08605 /* GitHubAPIService.swift in Sources */,
 				9B8B701E2A7CC58B00C08605 /* SearchViewReactor.swift in Sources */,
