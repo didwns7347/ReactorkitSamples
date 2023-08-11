@@ -24,7 +24,7 @@ class SearchViewController: BaseViewController ,View {
         let tv = UITableView()
         tv.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.identifier)
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.rowHeight = 100
+        tv.rowHeight = 200
         return tv
     }()
     
@@ -57,6 +57,8 @@ class SearchViewController: BaseViewController ,View {
         reactor.state.map{ $0.repositoryResult }
             .bind(to: tableView.rx.items(cellIdentifier: RepositoryCell.identifier, cellType: RepositoryCell.self)){
                 indexPath, repo, cell in
+                cell.controller = self.searchController
+                cell.tagList = repo.topics
                 cell.config(model: repo)
             }
             .disposed(by: disposeBag)
@@ -82,6 +84,9 @@ class SearchViewController: BaseViewController ,View {
                 self.searchController.present(vc, animated: true)
             })
             .disposed(by: disposeBag)
+
+        
+  
     }
 }
 
