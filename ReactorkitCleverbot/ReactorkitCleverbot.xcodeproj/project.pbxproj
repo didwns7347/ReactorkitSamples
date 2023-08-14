@@ -9,10 +9,23 @@
 /* Begin PBXBuildFile section */
 		9B7367152A89C97F003BF66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367142A89C97F003BF66C /* AppDelegate.swift */; };
 		9B7367172A89C97F003BF66C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367162A89C97F003BF66C /* SceneDelegate.swift */; };
-		9B7367192A89C97F003BF66C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367182A89C97F003BF66C /* ViewController.swift */; };
-		9B73671C2A89C97F003BF66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B73671A2A89C97F003BF66C /* Main.storyboard */; };
+		9B7367192A89C97F003BF66C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367182A89C97F003BF66C /* BaseViewController.swift */; };
 		9B73671E2A89C980003BF66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B73671D2A89C980003BF66C /* Assets.xcassets */; };
 		9B7367212A89C980003BF66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B73671F2A89C980003BF66C /* LaunchScreen.storyboard */; };
+		9B73672A2A89CAB8003BF66C /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367292A89CAB8003BF66C /* CompositionRoot.swift */; };
+		9B73672D2A89CB0F003BF66C /* CleverbotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73672C2A89CB0F003BF66C /* CleverbotService.swift */; };
+		9B7367302A89DF72003BF66C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73672F2A89DF72003BF66C /* ChatViewController.swift */; };
+		9B7367322A89E003003BF66C /* ChatViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367312A89E003003BF66C /* ChatViewReactor.swift */; };
+		9B7367352A89E07D003BF66C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367342A89E07D003BF66C /* Message.swift */; };
+		9B7367382A89E321003BF66C /* ChatViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367372A89E321003BF66C /* ChatViewSection.swift */; };
+		9B73673B2A89E421003BF66C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73673A2A89E421003BF66C /* BaseCollectionViewCell.swift */; };
+		9B73673D2A89E490003BF66C /* MessageCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73673C2A89E490003BF66C /* MessageCellReactor.swift */; };
+		9B73673F2A89F6E1003BF66C /* IncomingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73673E2A89F6E1003BF66C /* IncomingMessageCell.swift */; };
+		9B7367412A89F77F003BF66C /* BaseMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367402A89F77F003BF66C /* BaseMessageCell.swift */; };
+		9B7367432A89FCF0003BF66C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367422A89FCF0003BF66C /* String+.swift */; };
+		9B7367462A89FEAD003BF66C /* OutgoingMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367452A89FEAD003BF66C /* OutgoingMessageCell.swift */; };
+		9B7367482A8A0426003BF66C /* MessageInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367472A8A0426003BF66C /* MessageInputBar.swift */; };
+		9B73674A2A8A21EF003BF66C /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7367492A8A21EF003BF66C /* UICollectionView+.swift */; };
 		A2A1C2D502ACDE1A1CBF540B /* Pods_ReactorkitCleverbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CB7ADED67AF3D674A06318 /* Pods_ReactorkitCleverbot.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +35,24 @@
 		9B7367112A89C97F003BF66C /* ReactorkitCleverbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorkitCleverbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7367142A89C97F003BF66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7367162A89C97F003BF66C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9B7367182A89C97F003BF66C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9B73671B2A89C97F003BF66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B7367182A89C97F003BF66C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B73671D2A89C980003BF66C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B7367202A89C980003BF66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B7367222A89C980003BF66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B7367292A89CAB8003BF66C /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
+		9B73672C2A89CB0F003BF66C /* CleverbotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleverbotService.swift; sourceTree = "<group>"; };
+		9B73672F2A89DF72003BF66C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9B7367312A89E003003BF66C /* ChatViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewReactor.swift; sourceTree = "<group>"; };
+		9B7367342A89E07D003BF66C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9B7367372A89E321003BF66C /* ChatViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewSection.swift; sourceTree = "<group>"; };
+		9B73673A2A89E421003BF66C /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B73673C2A89E490003BF66C /* MessageCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellReactor.swift; sourceTree = "<group>"; };
+		9B73673E2A89F6E1003BF66C /* IncomingMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessageCell.swift; sourceTree = "<group>"; };
+		9B7367402A89F77F003BF66C /* BaseMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMessageCell.swift; sourceTree = "<group>"; };
+		9B7367422A89FCF0003BF66C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		9B7367452A89FEAD003BF66C /* OutgoingMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessageCell.swift; sourceTree = "<group>"; };
+		9B7367472A8A0426003BF66C /* MessageInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputBar.swift; sourceTree = "<group>"; };
+		9B7367492A8A21EF003BF66C /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		A18339E7422E5CA1FD1717C6 /* Pods-ReactorkitCleverbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactorkitCleverbot.release.xcconfig"; path = "Target Support Files/Pods-ReactorkitCleverbot/Pods-ReactorkitCleverbot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,10 +106,13 @@
 		9B7367132A89C97F003BF66C /* ReactorkitCleverbot */ = {
 			isa = PBXGroup;
 			children = (
+				9B7367442A89FCF4003BF66C /* Utils */,
+				9B7367392A89E3BA003BF66C /* Views */,
+				9B7367362A89E313003BF66C /* Sections */,
+				9B7367332A89E06B003BF66C /* Models */,
 				9B7367282A89CA0F003BF66C /* Entry */,
-				9B7367162A89C97F003BF66C /* SceneDelegate.swift */,
-				9B7367182A89C97F003BF66C /* ViewController.swift */,
-				9B73671A2A89C97F003BF66C /* Main.storyboard */,
+				9B73672E2A89CB90003BF66C /* ViewControllers */,
+				9B73672B2A89CAF9003BF66C /* Services */,
 				9B73671D2A89C980003BF66C /* Assets.xcassets */,
 				9B73671F2A89C980003BF66C /* LaunchScreen.storyboard */,
 				9B7367222A89C980003BF66C /* Info.plist */,
@@ -94,9 +123,67 @@
 		9B7367282A89CA0F003BF66C /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				9B7367162A89C97F003BF66C /* SceneDelegate.swift */,
 				9B7367142A89C97F003BF66C /* AppDelegate.swift */,
+				9B7367292A89CAB8003BF66C /* CompositionRoot.swift */,
 			);
 			path = Entry;
+			sourceTree = "<group>";
+		};
+		9B73672B2A89CAF9003BF66C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B73672C2A89CB0F003BF66C /* CleverbotService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9B73672E2A89CB90003BF66C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9B7367182A89C97F003BF66C /* BaseViewController.swift */,
+				9B73672F2A89DF72003BF66C /* ChatViewController.swift */,
+				9B7367312A89E003003BF66C /* ChatViewReactor.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9B7367332A89E06B003BF66C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B7367342A89E07D003BF66C /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9B7367362A89E313003BF66C /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				9B7367372A89E321003BF66C /* ChatViewSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		9B7367392A89E3BA003BF66C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B73673A2A89E421003BF66C /* BaseCollectionViewCell.swift */,
+				9B73673C2A89E490003BF66C /* MessageCellReactor.swift */,
+				9B73673E2A89F6E1003BF66C /* IncomingMessageCell.swift */,
+				9B7367402A89F77F003BF66C /* BaseMessageCell.swift */,
+				9B7367452A89FEAD003BF66C /* OutgoingMessageCell.swift */,
+				9B7367472A8A0426003BF66C /* MessageInputBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B7367442A89FCF4003BF66C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9B7367422A89FCF0003BF66C /* String+.swift */,
+				9B7367492A8A21EF003BF66C /* UICollectionView+.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +248,6 @@
 			files = (
 				9B7367212A89C980003BF66C /* LaunchScreen.storyboard in Resources */,
 				9B73671E2A89C980003BF66C /* Assets.xcassets in Resources */,
-				9B73671C2A89C97F003BF66C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,23 +300,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B7367192A89C97F003BF66C /* ViewController.swift in Sources */,
+				9B73672A2A89CAB8003BF66C /* CompositionRoot.swift in Sources */,
+				9B7367192A89C97F003BF66C /* BaseViewController.swift in Sources */,
 				9B7367152A89C97F003BF66C /* AppDelegate.swift in Sources */,
+				9B7367322A89E003003BF66C /* ChatViewReactor.swift in Sources */,
+				9B7367382A89E321003BF66C /* ChatViewSection.swift in Sources */,
+				9B7367462A89FEAD003BF66C /* OutgoingMessageCell.swift in Sources */,
+				9B73673D2A89E490003BF66C /* MessageCellReactor.swift in Sources */,
+				9B7367412A89F77F003BF66C /* BaseMessageCell.swift in Sources */,
+				9B73673B2A89E421003BF66C /* BaseCollectionViewCell.swift in Sources */,
+				9B73674A2A8A21EF003BF66C /* UICollectionView+.swift in Sources */,
 				9B7367172A89C97F003BF66C /* SceneDelegate.swift in Sources */,
+				9B7367482A8A0426003BF66C /* MessageInputBar.swift in Sources */,
+				9B7367352A89E07D003BF66C /* Message.swift in Sources */,
+				9B73673F2A89F6E1003BF66C /* IncomingMessageCell.swift in Sources */,
+				9B7367302A89DF72003BF66C /* ChatViewController.swift in Sources */,
+				9B7367432A89FCF0003BF66C /* String+.swift in Sources */,
+				9B73672D2A89CB0F003BF66C /* CleverbotService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B73671A2A89C97F003BF66C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B73671B2A89C97F003BF66C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9B73671F2A89C980003BF66C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -369,7 +461,7 @@
 				INFOPLIST_FILE = ReactorkitCleverbot/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -398,7 +490,7 @@
 				INFOPLIST_FILE = ReactorkitCleverbot/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
