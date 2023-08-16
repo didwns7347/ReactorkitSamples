@@ -31,7 +31,7 @@ final class ChatViewController: BaseViewController, View {
     }
     
     private enum Color {
-        static let placeholderLabelText = 0xCCCCCC.color
+        static let placeholderLabelText = UIColor.gray
     }
     
     fileprivate struct Reusable {
@@ -47,10 +47,12 @@ final class ChatViewController: BaseViewController, View {
             case .inComingMessage(let reactor):
                 let cell = collectionView.dequeue(Reusable.incomingMessageCell, for: indexPath)
                 cell.reactor = reactor
+                //                cell.configCell()
                 return  cell
             case .outgoingMessage(let reactor):
                 let cell = collectionView.dequeue(Reusable.outgoingMessageCell, for: indexPath)
                 cell.reactor = reactor
+                //                cell.configCell()
                 return cell
             }
         }
@@ -98,6 +100,9 @@ final class ChatViewController: BaseViewController, View {
         self.view.addSubview(self.placeholderLabel)
         self.view.addSubview(self.messageInputBar)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(tapGesture)
+        
         layout()
     }
     
@@ -112,6 +117,10 @@ final class ChatViewController: BaseViewController, View {
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
+    }
+    
+    @objc func viewTapped() {
+        self.view.endEditing(true)
     }
     
     
@@ -149,7 +158,35 @@ final class ChatViewController: BaseViewController, View {
             .bind(to: self.placeholderLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
+        // keyboard
+        RxKeyboard.instance.visibleHeight
+            .drive { [weak self] keyboardVisibleHeight in
+                guard let `self` = self else { return }
+                self.messageInputBar.snp.updateConstraints{
+                    var offset: CGFloat = -keyboardVisibleHeight
+                    if keyboardVisibleHeight > 0 {
+                        offset += self.view.safeAreaInsets.bottom
+                    }
+                    $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(offset)
+                }
+                self.view.setNeedsLayout()
+                UIView.animate(withDuration: 0) {
+                    self.collectionView.contentInset.bottom = keyboardVisibleHeight + self.messageInputBar.height
+                    self.collectionView.scrollIndicatorInsets.bottom = self.collectionView.bottom
+                    self.view.layoutIfNeeded()
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.willShowVisibleHeight
+            .drive { [weak self] keyboardVisibleHeight in
+                self?.collectionView.scrollToBottom(animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        
     }
+ 
     
     
     

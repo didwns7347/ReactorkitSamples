@@ -9,7 +9,7 @@ import UIKit
 
 final class IncomingMessageCell: BaseMessageCell {
     fileprivate struct Color {
-        static let bubleViewBackground = 0xD9D9D9.color
+        static let bubleViewBackground = UIColor(named: "OutCellBG")!
         static let messageLabelText = UIColor.black
     }
     
