@@ -100,6 +100,9 @@ final class ChatViewController: BaseViewController, View {
         self.view.addSubview(self.placeholderLabel)
         self.view.addSubview(self.messageInputBar)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(tapGesture)
+        
         layout()
     }
     
@@ -114,6 +117,10 @@ final class ChatViewController: BaseViewController, View {
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
+    }
+    
+    @objc func viewTapped() {
+        self.view.endEditing(true)
     }
     
     
@@ -176,7 +183,10 @@ final class ChatViewController: BaseViewController, View {
                 self?.collectionView.scrollToBottom(animated: true)
             }
             .disposed(by: disposeBag)
+        
+        
     }
+ 
     
     
     

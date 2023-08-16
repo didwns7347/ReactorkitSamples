@@ -45,7 +45,7 @@ class BaseMessageCell: BaseCollectionViewCell, View {
         self.appearance = appearance
         super.init(frame: frame)
         
-        
+//        configCell()
         
         self.bubbleView.addSubview(self.messageLabel)
         self.contentView.addSubview(self.bubbleView)
