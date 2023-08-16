@@ -170,8 +170,8 @@
 				9B73673A2A89E421003BF66C /* BaseCollectionViewCell.swift */,
 				9B73673C2A89E490003BF66C /* MessageCellReactor.swift */,
 				9B73673E2A89F6E1003BF66C /* IncomingMessageCell.swift */,
-				9B7367402A89F77F003BF66C /* BaseMessageCell.swift */,
 				9B7367452A89FEAD003BF66C /* OutgoingMessageCell.swift */,
+				9B7367402A89F77F003BF66C /* BaseMessageCell.swift */,
 				9B7367472A8A0426003BF66C /* MessageInputBar.swift */,
 			);
 			path = Views;

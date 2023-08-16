@@ -45,14 +45,10 @@ class BaseMessageCell: BaseCollectionViewCell, View {
         self.appearance = appearance
         super.init(frame: frame)
         
-        self.bubbleView.image = UIImage.resizable()
-            .corner(radius: 18)
-            .color(appearance.bubbleViewBackgroundColor)
-            .image
-        self.messageLabel.textColor = appearance.messageLabelTextColor
+        
         
         self.bubbleView.addSubview(self.messageLabel)
-        self.bubbleView.addSubview(self.bubbleView)
+        self.contentView.addSubview(self.bubbleView)
         
     }
     
@@ -67,41 +63,51 @@ class BaseMessageCell: BaseCollectionViewCell, View {
         self.setNeedsLayout()
     }
     
+    func configCell() {
+        self.bubbleView.image = UIImage.resizable()
+            .corner(radius: 18)
+            .color(appearance.bubbleViewBackgroundColor)
+            .image
+        self.messageLabel.textColor = appearance.messageLabelTextColor
+    }
+    
     
     // MARK: Size
-
+    
     class func size(thatFitsWidth width: CGFloat, reactor: MessageCellReactor) -> CGSize {
-      var height: CGFloat = 0
-      let bubbleWidth = min(width, Metric.bubbleViewMaximumWidth)
-      if let message = reactor.currentState.message {
-        let messageLabelWidth = bubbleWidth - Metric.messageLabelLeftRight * 2
-        height += Metric.messageLabelTopBottom
-        height += message.height(thatFitsWidth: messageLabelWidth, font: Font.messageLabel)
-        height += Metric.messageLabelTopBottom
-      }
-      return CGSize(width: width, height: height)
+        var height: CGFloat = 0
+        let bubbleWidth = min(width, Metric.bubbleViewMaximumWidth)
+        if let message = reactor.currentState.message {
+            let messageLabelWidth = bubbleWidth - Metric.messageLabelLeftRight * 2
+            height += Metric.messageLabelTopBottom
+            height += message.height(thatFitsWidth: messageLabelWidth, font: Font.messageLabel)
+            height += Metric.messageLabelTopBottom
+        }
+        return CGSize(width: width, height: height)
     }
-
-
+    
+    
     // MARK: Layout
-
+    
     override func layoutSubviews() {
-      super.layoutSubviews()
-
-      self.messageLabel.top = Metric.messageLabelTopBottom
-      self.messageLabel.left = Metric.messageLabelLeftRight
-      self.messageLabel.width = min(self.contentView.width, Metric.bubbleViewMaximumWidth)
+        super.layoutSubviews()
+        
+        self.messageLabel.top = Metric.messageLabelTopBottom
+        self.messageLabel.left = Metric.messageLabelLeftRight
+        self.messageLabel.width = min(self.contentView.width, Metric.bubbleViewMaximumWidth)
         - Metric.messageLabelLeftRight * 2
-      self.messageLabel.sizeToFit()
-
-      self.bubbleView.width = self.messageLabel.width + Metric.messageLabelLeftRight * 2
-      self.bubbleView.height = self.contentView.height
-
-      switch self.appearance.bubbleViewAlignment {
-      case .left:
-        self.bubbleView.left = 0
-      case .right:
-        self.bubbleView.right = self.contentView.width
-      }
+        self.messageLabel.sizeToFit()
+        
+        self.bubbleView.width = self.messageLabel.width + Metric.messageLabelLeftRight * 2
+        self.bubbleView.height = self.contentView.height
+        
+        switch self.appearance.bubbleViewAlignment {
+        case .left:
+            self.bubbleView.left = 0
+        case .right:
+            self.bubbleView.right = self.contentView.width
+        }
+        self.configCell()
+        
     }
 }
